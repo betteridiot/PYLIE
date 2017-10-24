@@ -1,4 +1,4 @@
-# PYLIE
+# PyLIE: Python Language Immersion & Education
 * [Introduction to PyLIE (ppt file)](https://github.com/betteridiot/PYLIE/blob/master/PyLIE.pptx)
 * [Code types and Pair Programming (ppt file)](https://github.com/betteridiot/PYLIE/blob/master/PyLIE%20-%2024Feb2017.pptx)
 * [Documentation (ppt file)](https://github.com/betteridiot/PYLIE/blob/master/PyLIE%20-%2010Mar2017.pptx)
