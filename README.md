@@ -8,4 +8,4 @@ Academics co-learning industry standards & practices to become better coders and
 * [Project Layout](https://github.com/betteridiot/PYLIE/blob/master/PyLIE-Project_Layout.ipynb)
 * [Test Framework](https://github.com/betteridiot/PYLIE/blob/master/PyLIE_17Oct2017_Testing.ipynb)
 * [Profiling](https://github.com/betteridiot/PYLIE/blob/master/PyLIE_24Oct2017_Profiling.ipynb)
-* [Multiprocessin & Threading](https://github.com/betteridiot/PYLIE/tree/master/PyLIE_7Nov2017_Multiprocessing)
+* [Multiprocessing & Threading](https://github.com/betteridiot/PYLIE/tree/master/PyLIE_7Nov2017_Multiprocessing)
