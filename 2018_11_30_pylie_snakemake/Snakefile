@@ -1,0 +1,47 @@
+# SAMPLES = ["sample_1", "sample_2"]
+# FEATURES  = ["feature_1", "feature_2", "feature_3"]
+# FEATURES, = glob_wildcards("features/{features}.txt")
+
+
+def read_samples():
+    for sample in config["SAMPLES"].keys():
+        yield sample
+
+
+def read_features():
+    infile = config["FEATURES"]
+    with open(infile, "r") as stream:
+        for line in stream:
+            yield line.strip()
+
+
+rule all:
+    input:
+        expand("output/{sample}.processed.txt",
+               sample=SAMPLES),
+        expand("output/{sample}/{feature}.processed",
+               sample=SAMPLES, feature=read_features())
+
+rule step_1:
+    input:
+        sample_file = "samples/{sample}.txt",
+        feature_file = "features/{feature}.txt",
+    output:
+        temp(outfile = "output/{sample}/{feature}.processed")
+    resources:
+        disk_limit = 1
+    shell:
+        """
+        cat {input.sample_file} > {output}
+        cat {input.feature_file} >> {output}
+        """
+
+rule step_2:
+    input: 
+        expand(rules.step_1.output, sample=SAMPLES, feature=FEATURES)
+    output:
+        "output/{sample}.processed.txt"
+    shell:
+        """
+        cat {input} > {output}
+        """

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Make dummy dataset
+mkdir samples features
+for i in {1..5}; do echo "this is sample ${i}" \
+    > samples/sample_${i}.txt;done
+for i in {1..20}; do echo "this is feature ${i}" \
+    > features/feature_${i}.txt;done
+
+# Make DAG
+snakemake --dag -F | dot -Tsvg > dag.svg
+
+# Run snakemake (dry run)
+snakemake -npr
+
+# Run snakemake
+snakemake -pr
